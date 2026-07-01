@@ -17,6 +17,11 @@
   <script src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script>
+    Babel.registerPreset('react-classic', {
+      presets: [[Babel.availablePresets.react, { runtime: 'classic' }]]
+    });
+  </script>
 
   <!-- Firebase (compat for simple global API) -->
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
@@ -186,7 +191,7 @@
   </script>
 
   <!-- Main application -->
-  <script type="text/babel" data-presets="react">
+  <script type="text/babel" data-presets="react-classic">
     if (window.__LOCKED__) throw new Error('locked');
     const { useState, useEffect, useMemo } = React;
     const { PieChart, Pie, Cell, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } = Recharts;
